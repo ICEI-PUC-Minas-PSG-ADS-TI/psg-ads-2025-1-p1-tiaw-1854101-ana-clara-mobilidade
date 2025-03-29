@@ -19,11 +19,7 @@
 
 ## Objetivos
 
-> Aqui você deve descrever os objetivos do trabalho indicando que o
-> objetivo geral é desenvolver um software para solucionar o problema
-> apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-> específicos dependendo de onde você vai querer concentrar a sua
-> prática investigativa, ou como você vai aprofundar no seu trabalho.
+> O SECURITY ROTE e um site  que tem como objetivo fornece aos usuários informações detalhadas sobre rotas seguras, condições das vias e alertas sobre áreas de risco, permitindo um deslocamento mais seguro e eficiente nas cidades.
 > 
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
