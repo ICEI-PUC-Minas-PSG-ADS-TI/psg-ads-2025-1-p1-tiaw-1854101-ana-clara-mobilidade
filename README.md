@@ -18,7 +18,6 @@ Os membros do grupo são:
 - Livia Mendes
 - Mateus Souza
 - Paula Bessa
-- 
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
