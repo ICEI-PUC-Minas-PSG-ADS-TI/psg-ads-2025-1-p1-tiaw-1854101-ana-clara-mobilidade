@@ -91,9 +91,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito                                                                      |  Prioridade |
 |------|---------------------------------------------------------------------------------------------|-------------|
-RF001  |A PÁGINA DEVE PERMITIR QUE OS USUÁRIOS SE CADASTREM E FAÇAM LOGIN UTILIZANDO E-MAIL E SENHA, | ALTA
-       |OU ATRAVÉS DE AUTENTICAÇÃO VIA 
-       |REDES SOCIAIS (GOOGLE,FACEBOOK, ETC.).
+RF001  |A PÁGINA DEVE PERMITIR QUE OS USUÁRIOS SE CADASTREM E FAÇAM LOGIN UTILIZANDO E-MAIL E SENHA, | ALTA        |
+       |OU ATRAVÉS DE AUTENTICAÇÃO VIA                                                               |             |
+       |REDES SOCIAIS (GOOGLE,FACEBOOK, ETC.).                                                       |             |
 RF002  | A PÁGINA DEVE OFERECER UMA FUNCIONALIDADE DE BUSCA QUE PERMITA AOS USUÁRIOS ENCONTRAR
          ROTAS E MEIOS DE TRANSPORTE DISPONÍVEIS (ÔNIBUS, METRÔ, BICICLETAS, ETC.) COM BASE EM SUA
          LOCALIZAÇÃO ATUAL E DESTINO DESEJADO.
