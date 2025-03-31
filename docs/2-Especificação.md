@@ -8,12 +8,40 @@
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em
-se desenvolver profissionalmente através de um mestrado fora do país,
-pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está
-buscando uma agência que o ajude a encontrar universidades na Europa
-que aceitem alunos estrangeiros.
+Nome: Lucas Mendes
+📌 Idade: 32 anos
+📌 Profissão: Executivo de vendas
+📌 Necessidades: Precisa chegar rápido a compromissos sem atrasos, evitando áreas congestionadas ou perigosas.
+📌 Dores: Perder tempo no trânsito, passar por locais com alto risco de assaltos.
+📌 Solução: Rotas otimizadas que garantam rapidez e segurança, usando aplicativos de navegação confiáveis.
 
+Nome: Juliana Souza
+📌 Idade: 28 anos
+📌 Profissão: Professora
+📌 Necessidades: Caminhar com segurança com seu filho pequeno, evitando calçadas ruins e áreas perigosas.
+📌 Dores: Falta de acessibilidade, medo de passar por ruas desertas ou sem iluminação.
+📌 Solução: Caminhos seguros e bem iluminados, com alternativas acessíveis para carrinhos de bebê.
+
+Nome: Felipe Andrade
+📌 Idade: 29 anos
+📌 Profissão: Designer gráfico
+📌 Necessidades: Precisa de rotas rápidas, seguras e acessíveis para pedalar pela cidade, evitando ruas perigosas e com alto fluxo de carros.
+📌 Dores: Falta de ciclovias, vias com buracos ou bloqueadas, risco de acidentes com motoristas desatentos.
+📌 Solução: Um sistema de navegação que indique rotas seguras para ciclistas, mostrando ciclovias, ruas com menor tráfego e locais com suporte para bicicletas (como bicicletários).
+
+Nome: Rafael Lima
+📌 Idade: 24 anos
+📌 Profissão: Motoboy
+📌 Necessidades: Encontrar as rotas mais rápidas para entregar pedidos sem atraso, evitando vias bloqueadas.
+📌 Dores: Perder tempo com ruas intransitáveis ou bloqueadas, enfrentar risco de acidentes em vias perigosas.
+📌 Solução: Aplicativo que sugira rotas seguras e ágeis, considerando interdições e trânsito em tempo real.
+
+Nome: Marina Castro
+📌 Idade: 45 anos
+📌 Profissão: Advogada
+📌 Necessidades: Precisa de rotas acessíveis, sem escadas ou calçadas esburacadas.
+📌 Dores: Falta de rampas, elevadores quebrados, dificuldades em locais movimentados.
+📌 Solução: Mapas que indicam caminhos acessíveis e seguros para cadeirantes e pessoas com dificuldades de locomoção.
 
 > Enumere e detalhe as personas da sua solução. Para
 > tanto, baseie-se tanto nos documentos disponibilizados na disciplina
@@ -34,10 +62,15 @@ que aceitem alunos estrangeiros.
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|EU COMO... `PERSONA`|  QUERO/PRECISO ... `FUNCIONALIDADE`                  |PARA ... `MOTIVO/VALOR`                       |
+|--------------------|------------------------------------------------------|----------------------------------------------|
+| MOTORISTA          | CAMPO PARA RELATAR POSSIVEIS FALHAS                  |  PARA CIENCIAS DE POSSIVEIS FALHAS NO SITE   |
+| MOTORISTA          |  BOTÃO DE EMERGENCIA PARA LUGAR DIRETO NA POLICIA    | AFIM DE PROPORCIONAR MAIS CONFORTABILIDADE   |
+| MOTORISTA          |  AVISO PARA ORIENTAÇÃO CASO ENTRE EM AREAS DE RISCO  |  PARA EVITAR SITUAÇÃO DE DESCONFORTO         |
+| CICLISTA           |  INDICAR AREAS COM CICLOVIAS                         |  PARA EVITAR ACIDENTE E LUGARES INAPROPIADOS |
+| MOTORISTA          | INDICA ROTAS SEGURAS COM TEMPO E DISTANCIA           |  PARA MAIOR CONFORTO E  SEGURANÇA            |
+| MOTORISTA          |  AREAS CONGESTIONADAS EM TEMPO REAL                  |  PARA UM TRAJETO MAIS RAPIDO                 |
+
 
 > Apresente aqui as histórias de usuário que são relevantes para o
 > projeto de sua solução. As Histórias de Usuário consistem em uma
