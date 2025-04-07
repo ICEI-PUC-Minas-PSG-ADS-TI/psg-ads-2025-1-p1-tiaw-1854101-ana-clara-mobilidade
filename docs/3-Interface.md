@@ -21,7 +21,7 @@
 > - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
 > - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
 
-
+[user flow.pdf](https://github.com/user-attachments/files/19633553/user.flow.pdf)
 
 ## Wireframes
 
@@ -35,3 +35,6 @@
 > **Links Úteis**:
 > - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
 > - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+>
+> - [user flow.pdf](https://github.com/user-attachments/files/19633561/user.flow.pdf)
+
