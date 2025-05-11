@@ -20,7 +20,8 @@
 ## Arquitetura da solução
 
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+<img width="417" alt="arquitetura-exemplo" src="https://github.com/user-attachments/assets/0e2d0549-6369-41e2-944f-4788a30c3cfd" />
+
 
  Inclua um diagrama da solução e descreva os módulos e as tecnologias
  que fazem parte da solução. Discorra sobre o diagrama.
