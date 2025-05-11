@@ -3,10 +3,34 @@ body {
     padding: 20px;
 }
 
+#alerta,
+#seguro {
+    padding: 20px;
+    margin-top: 20px;
+    display: none;
+}
+
 #alerta {
     background-color: red;
     color: white;
-    padding: 20px;
+}
+
+#seguro {
+    background-color: green;
+    color: white;
+}
+
+#formEndereco {
     display: none;
     margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.botoes {
+    margin-top: 20px;
+}
+
+button {
+    margin-right: 10px;
 }

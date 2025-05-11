@@ -9,14 +9,35 @@
 
 <body>
     <script src="script.js"></script>
-    <h1>Alerta</h1>
+    <div class="botoes">
+        <button onclick="mostrarFormulario()">Cadastrar Endereço</button>
+        <button onclick="mostrarEnderecos()">Endereços Cadastrados</button>
+        <button onclick="verificarLocalizacao()">Verificar Localização Atual</button>
+    </div>
+    <div id="formEndereco">
+        <h3>Novo Endereço</h3>
+        <label>Nome: <input type="text" id="nomeEndereco"></label><br><br>
+        <label>Latitude: <input type="number" id="latEndereco" step="any"></label><br><br>
+        <label>Longitude: <input type="number" id="lonEndereco" step="any"></label><br><br>
+        <label>Raio de risco (km): <input type="number" id="raioEndereco" step="0.1"></label><br><br>
+        <button onclick="cadastrarEndereco()">Salvar</button>
+    </div>
+
+    <div id="listaEnderecos" style="margin-top: 20px;"></div>
+    <h2>Alerta</h2>
     <button onclick="verificarLocalizacao()">Verificar Localização</button>
     <audio id="somAlerta" src="alerta.mp3" preload="auto"></audio>
 
     <div id="alerta">
-        <h2>⚠️ Alerta de Risco!</h2>
+        <h3>⚠️ Alerta de Risco!</h3>
         <p>Você está em uma área considerada perigosa.</p>
     </div>
+    <div id="seguro">
+        <h2>✅ Local Seguro</h2>
+        <p>Você está em uma área segura.</p>
+    </div>
+
+    <audio id="somAlerta" src="audioalerta.mp3" preload="auto"></audio>
 
 </body>
 
