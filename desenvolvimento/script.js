@@ -190,3 +190,169 @@ let areasDeRisco = [];
     function toRad(value) {
       return value * Math.PI / 180;
     }//Fim Mateus
+
+
+    //inicio Livia
+    (function() {
+    const birthDateInput = document.getElementById('birthDate');
+    const today = new Date().toISOString().split('T')[0];
+    birthDateInput.setAttribute('max', today);
+
+    const form = document.getElementById('registrationForm');
+    const fields = {
+      fullName: { elem: document.getElementById('fullName'), errorElem: document.getElementById('fullNameError') },
+      email: { elem: document.getElementById('email'), errorElem: document.getElementById('emailError') },
+      password: { elem: document.getElementById('password'), errorElem: document.getElementById('passwordError') },
+      confirmPassword: { elem: document.getElementById('confirmPassword'), errorElem: document.getElementById('confirmPasswordError') },
+      birthDate: { elem: birthDateInput, errorElem: document.getElementById('birthDateError') }
+    };
+    const successMessageElem = document.getElementById('successMessage');
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+
+    function clearErrors() {
+      Object.values(fields).forEach(f => f.errorElem.textContent = '');
+      successMessageElem.textContent = '';
+    }
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      clearErrors();
+      let valid = true;
+
+      const fullNameVal = fields.fullName.elem.value.trim();
+      if (!fullNameVal) {
+        fields.fullName.errorElem.textContent = 'Por favor, insira seu nome completo.';
+        valid = false;
+      }
+
+      const emailVal = fields.email.elem.value.trim();
+      if (!emailVal) {
+        fields.email.errorElem.textContent = 'Por favor, insira seu e-mail.';
+        valid = false;
+      } else if (!validateEmail(emailVal)) {
+        fields.email.errorElem.textContent = 'Formato de e-mail inválido.';
+        valid = false;
+      }
+
+      const passwordVal = fields.password.elem.value;
+      if (!passwordVal) {
+        fields.password.errorElem.textContent = 'Por favor, insira uma senha.';
+        valid = false;
+      } else if (passwordVal.length < 6) {
+        fields.password.errorElem.textContent = 'A senha deve ter no mínimo 6 caracteres.';
+        valid = false;
+      }
+
+      const confirmPasswordVal = fields.confirmPassword.elem.value;
+      if (!confirmPasswordVal) {
+        fields.confirmPassword.errorElem.textContent = 'Por favor, confirme sua senha.';
+        valid = false;
+      } else if (confirmPasswordVal !== passwordVal) {
+        fields.confirmPassword.errorElem.textContent = 'As senhas não coincidem.';
+        valid = false;
+      }
+
+      const birthDateVal = fields.birthDate.elem.value;
+      if (!birthDateVal) {
+        fields.birthDate.errorElem.textContent = 'Por favor, insira sua data de nascimento.';
+        valid = false;
+      } else if (birthDateVal > today) {
+        fields.birthDate.errorElem.textContent = 'A data de nascimento não pode ser no futuro.';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const userData = {
+        fullName: fullNameVal,
+        email: emailVal,
+        password: passwordVal, 
+        birthDate: birthDateVal
+      };
+
+      let existingUsers = localStorage.getItem('users');
+      existingUsers = existingUsers ? JSON.parse(existingUsers) : [];
+      existingUsers.push(userData);
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+
+      successMessageElem.textContent = 'Cadastro realizado com sucesso!';
+      form.reset();
+    });
+  })();
+
+   (function() {
+    const form = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const successMessage = document.getElementById('successMessage');
+    const loginErrorMessage = document.getElementById('loginErrorMessage');
+    const btnRegister = document.getElementById('btnRegister');
+
+    function clearMessages() {
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      successMessage.textContent = '';
+      loginErrorMessage.textContent = '';
+    }
+
+    btnRegister.addEventListener('click', function() {
+      window.location.href = 'cadastro.html';
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearMessages();
+
+      const emailVal = emailInput.value.trim();
+      const passwordVal = passwordInput.value;
+
+      let valid = true;
+
+      if (!emailVal) {
+        emailError.textContent = 'Por favor, insira seu e-mail.';
+        valid = false;
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailVal.toLowerCase())) {
+          emailError.textContent = 'Formato de e-mail inválido.';
+          valid = false;
+        }
+      }
+      if (!passwordVal) {
+        passwordError.textContent = 'Por favor, insira sua senha.';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      let users = localStorage.getItem('users');
+      users = users ? JSON.parse(users) : [];
+
+      if (users.length === 0) {
+        loginErrorMessage.textContent = 'Nenhum usuário cadastrado. Por favor, realize o cadastro.';
+        return;
+      }
+
+      const user = users.find(u => u.email.toLowerCase() === emailVal.toLowerCase() && u.password === passwordVal);
+
+      if (user) {
+        successMessage.textContent = `Bem-vindo, ${user.fullName}! Login realizado com sucesso.`;
+        setTimeout(() => {
+          successMessage.textContent = '';
+          form.reset();
+        
+        }, 2500);
+      } else {
+        loginErrorMessage.textContent = 'E-mail ou senha incorretos.';
+      }
+    });
+
+  })();
+  //Fim Livia
