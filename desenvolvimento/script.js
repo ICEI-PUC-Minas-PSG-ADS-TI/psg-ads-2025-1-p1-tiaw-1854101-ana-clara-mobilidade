@@ -380,3 +380,18 @@ let areasDeRisco = [];
     );
 });
 //Fim Ana 
+// Inicio Felipe
+
+function mostrarMensagem() {
+  alert("Email: email@gmail.com");
+  alert("Telefone: 31 9 9999-9999");
+}
+
+// Fim Felipe
+
+function mostrarMensagem() {
+  alert("Email: email@gmail.com");
+  alert("Telefone: 31 9 9999-9999");
+}
+
+// Fim Felipe

@@ -10,13 +10,20 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo da Security Rote">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo da Security Rote.">
+            </a>
         </div>
         <h1>ROTA SEGURA</h1>
         <nav>
-            <a href="#quemsomos">QUEM SOMOS?</a>
-            <a href="#contatos">CONTATOS</a>
-            <a href="#servicos">SERVIÇOS</a>
+            <a href="index2.html">QUEM SOMOS?</a>
+
+            <button onclick="mostrarMensagem()"
+                style="background-color: #2a5dad; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">CONTATOS
+            </button>
+
+            <a href="index3.html">SERVIÇOS</a>
+
         </nav>
     </header>
 
@@ -69,83 +76,89 @@
     <!-- Chave da API e biblioteca de Places -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&libraries=places&callback=initMap"></script>
-     
 
-     <!--inicio livia-->
+
+    <!--inicio livia-->
     <div class="container" role="main" aria-label="Formulário de cadastro do usuário">
-    <h1>Cadastro de Usuário</h1>
-    <form id="registrationForm" novalidate>
-      <label for="fullName">Nome Completo</label>
-      <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Digite seu nome completo" />
-      <div class="error-message" id="fullNameError" aria-live="polite"></div>
+        <h1>Cadastro de Usuário</h1>
+        <form id="registrationForm" novalidate>
+            <label for="fullName">Nome Completo</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name"
+                placeholder="Digite seu nome completo" />
+            <div class="error-message" id="fullNameError" aria-live="polite"></div>
 
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required autocomplete="email" placeholder="exemplo@dominio.com" />
-      <div class="error-message" id="emailError" aria-live="polite"></div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+                placeholder="exemplo@dominio.com" />
+            <div class="error-message" id="emailError" aria-live="polite"></div>
 
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" required autocomplete="new-password" placeholder="Crie uma senha segura" minlength="6" />
-      <div class="error-message" id="passwordError" aria-live="polite"></div>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required autocomplete="new-password"
+                placeholder="Crie uma senha segura" minlength="6" />
+            <div class="error-message" id="passwordError" aria-live="polite"></div>
 
-      <label for="confirmPassword">Confirmação de Senha</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" placeholder="Confirme a senha" minlength="6" />
-      <div class="error-message" id="confirmPasswordError" aria-live="polite"></div>
+            <label for="confirmPassword">Confirmação de Senha</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password"
+                placeholder="Confirme a senha" minlength="6" />
+            <div class="error-message" id="confirmPasswordError" aria-live="polite"></div>
 
-      <label for="birthDate">Data de Nascimento</label>
-      <input type="date" id="birthDate" name="birthDate" required max="" />
-      <div class="error-message" id="birthDateError" aria-live="polite"></div>
+            <label for="birthDate">Data de Nascimento</label>
+            <input type="date" id="birthDate" name="birthDate" required max="" />
+            <div class="error-message" id="birthDateError" aria-live="polite"></div>
 
-      <button type="submit" aria-label="Cadastrar usuário">Cadastrar</button>
+            <button type="submit" aria-label="Cadastrar usuário">Cadastrar</button>
 
-      <div class="success-message" id="successMessage" aria-live="polite"></div>
-    </form>
-    <div class="link-login">
-      <p>Já tem conta? <a href="login.html" aria-label="Página de login">Entrar</a></p>
+            <div class="success-message" id="successMessage" aria-live="polite"></div>
+        </form>
+        <div class="link-login">
+            <p>Já tem conta? <a href="login.html" aria-label="Página de login">Entrar</a></p>
+        </div>
     </div>
-  </div>
-   <div class="container" role="main" aria-label="Formulário de login do usuário">
-    <h1>Login</h1>
-    <form id="loginForm" novalidate>
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required autocomplete="email" placeholder="Digite seu e-mail" />
-      <div class="error-message" id="emailError" aria-live="polite"></div>
+    <div class="container" role="main" aria-label="Formulário de login do usuário">
+        <h1>Login</h1>
+        <form id="loginForm" novalidate>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="Digite seu e-mail" />
+            <div class="error-message" id="emailError" aria-live="polite"></div>
 
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Digite sua senha" />
-      <div class="error-message" id="passwordError" aria-live="polite"></div>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password"
+                placeholder="Digite sua senha" />
+            <div class="error-message" id="passwordError" aria-live="polite"></div>
 
-      <button type="submit" aria-label="Entrar">Login</button>
-      <button type="button" id="btnRegister" class="secondary" aria-label="Realizar cadastro">Realizar cadastro</button>
+            <button type="submit" aria-label="Entrar">Login</button>
+            <button type="button" id="btnRegister" class="secondary" aria-label="Realizar cadastro">Realizar
+                cadastro</button>
 
-      <div class="success-message" id="successMessage" aria-live="polite"></div>
-      <div class="error-message" id="loginErrorMessage" aria-live="polite"></div>
+            <div class="success-message" id="successMessage" aria-live="polite"></div>
+            <div class="error-message" id="loginErrorMessage" aria-live="polite"></div>
+        </form>
+    </div>
+    <!--Final Livia -->
+
+    <!--inicio Ana Clara-->
+    <h1>RELATAR PROBLEMA</h1>
+    <form id="reportForm">
+        <label for="city">Cidade do problema:</label>
+        <input type="text" id="city" name="city" placeholder="Informe a cidade" required />
+
+        <label for="street">Rua do problema:</label>
+        <input type="text" id="street" name="street" placeholder="Informe a rua" required />
+
+        <label for="neighborhood">Bairro do problema:</label>
+        <input type="text" id="neighborhood" name="neighborhood" placeholder="Informe o bairro" required />
+
+        <label for="description">Descrição do problema:</label>
+        <textarea id="description" name="description" placeholder="Descreva o problema" required></textarea>
+
+        <label for="image">Imagem do problema:</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+
+        <button type="submit">Enviar Relato</button>
     </form>
-  </div>
-     <!--Final Livia -->
+    <!--final Ana Clara-->
 
-     <!--inicio Ana Clara-->
-     <h1>RELATAR PROBLEMA</h1>
-     <form id="reportForm">
-       <label for="city">Cidade do problema:</label>
-       <input type="text" id="city" name="city" placeholder="Informe a cidade" required />
-   
-       <label for="street">Rua do problema:</label>
-       <input type="text" id="street" name="street" placeholder="Informe a rua" required />
-   
-       <label for="neighborhood">Bairro do problema:</label>
-       <input type="text" id="neighborhood" name="neighborhood" placeholder="Informe o bairro" required />
-   
-       <label for="description">Descrição do problema:</label>
-       <textarea id="description" name="description" placeholder="Descreva o problema" required></textarea>
-   
-       <label for="image">Imagem do problema:</label>
-       <input type="file" id="image" name="image" accept="image/*" />
-   
-       <button type="submit">Enviar Relato</button>
-     </form>
-     <!--final Ana Clara-->
 
-    
-    </body>
+</body>
 
 </html>
