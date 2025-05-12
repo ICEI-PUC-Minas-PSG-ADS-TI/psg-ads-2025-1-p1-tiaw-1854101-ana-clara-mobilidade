@@ -356,3 +356,27 @@ let areasDeRisco = [];
 
   })();
   //Fim Livia
+
+  //Inicio Ana 
+  document.getElementById('reportForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+   
+    const city = this.city.value.trim();
+    const street = this.street.value.trim();
+    const neighborhood = this.neighborhood.value.trim();
+    const description = this.description.value.trim();
+    const problemTitle = this.problemTitle.value.trim();
+    const imageInput = this.image;
+    let imageName = imageInput.files.length > 0 ? imageInput.files[0].name : 'Nenhuma imagem selecionada';
+
+    
+    alert(
+        `Cidade: ${city}\n` +
+        `Rua: ${street}\n` +
+        `Bairro: ${neighborhood}\n` +
+        `Descrição: ${description}\n` +
+        `Título do problema: ${problemTitle}\n` +
+        `Imagem: ${imageName}`
+    );
+});
+//Fim Ana 
