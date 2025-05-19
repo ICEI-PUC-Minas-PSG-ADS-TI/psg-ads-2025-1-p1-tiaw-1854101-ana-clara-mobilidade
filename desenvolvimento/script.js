@@ -303,7 +303,7 @@ let areasDeRisco = [];
     }
 
     btnRegister.addEventListener('click', function() {
-      window.location.href = 'cadastro.html';
+      window.location.href = 'cadastrousuario.html';
     });
 
     form.addEventListener('submit', function(e) {
