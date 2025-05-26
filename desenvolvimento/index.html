@@ -29,31 +29,29 @@
 
     <main>
         <section class="sidebar">
-            <button onclick="mostrarFormulario()"><a href="relatarproblema.html"></a>Cadastrar Endereço</button>
+            <a href="relatarproblema.html">
+                <button onclick="mostrarFormulario()" type="button">Cadastrar Endereço</button>
+              </a>
             <button onclick="mostrarEnderecos()">Endereços Cadastrados</button>
             <button onclick="verificarLocalizacao()">Verificar Localização Atual</button>
             </div>
             <select id="enderecosSelect"></select>
             <div id="alertas">
                 <h2>ALERTAS</h2 id="formEndereco">
-                <h3>Novo Endereço</h3>
-                <label>Nome: <input type="text" id="nomeEndereco"></label><br><br>
-                <label>Latitude: <input type="number" id="latEndereco" step="any"></label><br><br>
-                <label>Longitude: <input type="number" id="lonEndereco" step="any"></label><br><br>
-                <label>Raio de risco (km): <input type="number" id="raioEndereco" step="0.1"></label><br><br>
-                <button onclick="cadastrarEndereco()">Salvar</button>
+                <div id="alerta">
+                    <h3>⚠️ Alerta de Risco!</h3>
+                    <p>Você está em uma área considerada perigosa.</p>
+                </div>
+                <div id="seguro">
+                    <h3>✅ Local Seguro</h3>
+                    <p>Você está em uma área segura.</p>
+                </div>
+                <audio id="somAlerta" src="audioalerta.mp3" preload="auto"></audio>
+                <div id="listaAlertas"></div>
+                <div id="listaEnderecos" style="margin-top: 20px;"></div>
             </div>
-            <div id="listaEnderecos" style="margin-top: 20px;"></div>
-            <div id="alerta">
-                <h3>⚠️ Alerta de Risco!</h3>
-                <p>Você está em uma área considerada perigosa.</p>
-            </div>
-            <div id="seguro">
-                <h3>✅ Local Seguro</h3>
-                <p>Você está em uma área segura.</p>
-            </div>
-            <audio id="somAlerta" src="audioalerta.mp3" preload="auto"></audio>
-            <div id="listaAlertas"></div>
+           
+           
             </div>
 
 
