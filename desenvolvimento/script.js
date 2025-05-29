@@ -1,3 +1,4 @@
+//inicio paula
 let mapa;
 let marcadorPartida;
 let marcadorDestino;
@@ -41,9 +42,16 @@ function calcularRota() {
     const destino = document.getElementById('destino').value;
 
     if (!partida || !destino) {
-        alert("Por favor, insira os dois endereços.");
+        alert("Por favor, preencha os campos de partida e destino.");
         return;
     }
+    const rota = { partida, destino, data: new Date().toLocaleString() };
+
+    let rotas = JSON.parse(localStorage.getItem("rotasAnteriores")) || [];
+    rotas.push(rota);
+    localStorage.setItem("rotasAnteriores", JSON.stringify(rotas));
+
+    console.log("Rota salva:", rota);
 
     const request = {
         origin: partida,
@@ -105,6 +113,7 @@ function adicionarAlerta(nomeLocal) {
     alerta.classList.add("alerta-risco");
     lista.prepend(alerta);
 }
+//fim paula
 // Mateus:
 let areasDeRisco = [];
 
@@ -164,6 +173,11 @@ let areasDeRisco = [];
       });
     }
 
+      function acessarRotasAnteriores() {
+        // Redireciona para a página de rotas anteriores
+        window.location.href = "rotasanteriores.html";
+      }
+
     function mostrarAlerta() {
       document.getElementById("alerta").style.display = "block";
       document.getElementById("seguro").style.display = "none";
@@ -186,6 +200,14 @@ let areasDeRisco = [];
       const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       return R * c;
     }
+    window.onload = () => {
+    const rota = JSON.parse(localStorage.getItem("rotaTemporaria"));
+    if (rota) {
+        document.getElementById("Partida").value = rota.partida;
+        document.getElementById("Destino").value = rota.destino;
+        localStorage.removeItem("rotaTemporaria"); // remove após carregar
+    }
+    };
 
     function toRad(value) {
       return value * Math.PI / 180;

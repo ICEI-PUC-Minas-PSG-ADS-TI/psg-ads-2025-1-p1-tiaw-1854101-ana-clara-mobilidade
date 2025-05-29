@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotas Anteriores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <header>
+        <h1>Rotas Anteriores</h1>
+        <a href="index.html">← Voltar</a>
+    </header>
+ <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2a5dad;
+            color: white;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .excluir-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .refazer-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2a5dad;
+            font-weight: bold;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div id="listaRotas"></div>
+    </main>
+
+    <script>
+        function carregarRotas() {
+            const listaRotas = document.getElementById("listaRotas");
+            let rotas = JSON.parse(localStorage.getItem("rotasAnteriores")) || [];
+
+            if (rotas.length === 0) {
+                listaRotas.innerHTML = "<p>Nenhuma rota registrada ainda.</p>";
+                return;
+            }
+
+            let tabela = `<table>
+                <tr>
+                    <th>Partida</th>
+                    <th>Destino</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>`;
+
+            rotas.reverse().forEach((rota, index) => {
+                tabela += `
+                    <tr>
+                        <td>${rota.partida}</td>
+                        <td>${rota.destino}</td>
+                        <td>${rota.data}</td>
+                        <td>
+                            <button class="refazer-btn" onclick="refazerRota('${rota.partida}', '${rota.destino}')">Traçar novamente</button>
+                            <button class="excluir-btn" onclick="excluirRota(${rotas.length - 1 - index})">Excluir</button>
+                        </td>
+                    </tr>`;
+            });
+
+            tabela += `</table>`;
+            listaRotas.innerHTML = tabela;
+        }
+
+        function excluirRota(index) {
+            let rotas = JSON.parse(localStorage.getItem("rotasAnteriores")) || [];
+            rotas.splice(index, 1);
+            localStorage.setItem("rotasAnteriores", JSON.stringify(rotas));
+            carregarRotas();
+        }
+
+        function refazerRota(partida, destino) {
+            // Salva nos campos de formulário da página principal
+            localStorage.setItem("rotaTemporaria", JSON.stringify({ partida, destino }));
+            window.location.href = "index.html";
+        }
+
+        carregarRotas();
+    </script>
+</body>
+</html>
