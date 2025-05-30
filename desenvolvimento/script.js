@@ -12,21 +12,11 @@ const locaisDeRisco = [
 ];
 
 function initMap() {
-    const localizacaoInicial = { lat: -23.5505, lng: -46.6333 };
+    const localizacaoInicial = { lat: -19.92667, lng: -43.98222 };
 
     mapa = new google.maps.Map(document.getElementById('mapa'), {
-        zoom: 13,
+        zoom: 12,
         center: localizacaoInicial
-    });
-
-    marcadorPartida = new google.maps.Marker({
-        map: mapa,
-        title: "Partida"
-    });
-
-    marcadorDestino = new google.maps.Marker({
-        map: mapa,
-        title: "Destino"
     });
 
     directionsService = new google.maps.DirectionsService();
@@ -45,30 +35,25 @@ function calcularRota() {
         alert("Por favor, preencha os campos de partida e destino.");
         return;
     }
-    const rota = { partida, destino, data: new Date().toLocaleString() };
-
-    let rotas = JSON.parse(localStorage.getItem("rotasAnteriores")) || [];
-    rotas.push(rota);
-    localStorage.setItem("rotasAnteriores", JSON.stringify(rotas));
-
-    console.log("Rota salva:", rota);
-
     const request = {
         origin: partida,
         destination: destino,
         travelMode: google.maps.TravelMode.DRIVING,
     };
 
-    directionsService.route(request, function(result, status) {
-        if (status === google.maps.DirectionsStatus.OK) {
+     directionsService.route(request, (result, status) => {
+          if (status == "OK") {
             directionsRenderer.setDirections(result);
-            marcadorPartida.setPosition(result.routes[0].legs[0].start_location);
-            marcadorDestino.setPosition(result.routes[0].legs[0].end_location);
-        } else {
-            alert('Erro ao traçar a rota: ' + status);
-        }
+          } else {
+            alert("Erro ao traçar rota: " + status);
+          }
     });
 }
+let rotas = JSON.parse(localStorage.getItem("rotasAnteriores")) || [];
+    rotas.push(rota);
+    localStorage.setItem("rotasAnteriores", JSON.stringify(rotas));
+
+    console.log("Rota salva:", rota);
 
 function verificarLocalDeRisco() {
     if (navigator.geolocation) {

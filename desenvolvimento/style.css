@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #2a5dad;
+  background-color: #10144A;
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -21,7 +21,7 @@ header {
 }
 
 .logo {
-  background-color: 2a5dad;
+  background-color: #10144A;
   color: rgb(0, 0, 0);
   border-radius: 8px;
   width: 100px;
@@ -73,7 +73,7 @@ main {
 }
 
 footer {
-  background-color: #2a5dad;
+  background-color: #10144A;
   color: white;
   text-align: center;
   padding: 10px;

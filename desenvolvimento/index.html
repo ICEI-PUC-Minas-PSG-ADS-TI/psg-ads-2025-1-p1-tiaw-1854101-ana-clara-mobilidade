@@ -19,7 +19,7 @@
             <a href="index2.html">QUEM SOMOS?</a>
 
             <button onclick="mostrarMensagem()"
-                style="background-color: #2a5dad; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">CONTATOS
+                style="background-color: #10144A; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">CONTATOS
             </button>
 
             <a href="index3.html">SERVIÇOS</a>
@@ -40,7 +40,6 @@
             <button onclick="verificarLocalizacao()">Verificar Localização Atual</button>
             <button onclick="window.location.href='rotasanteriores.html'">Ver Rotas Anteriores</button>     
             </div>
-            <select id="enderecosSelect"></select>
             <div id="alertas">
                 <h2>ALERTAS</h2 id="formEndereco">
                 <h3>Novo Endereço</h3>
@@ -67,8 +66,8 @@
         </section>
 
         <section class="map-section">
-            <input type="text" id="Partida" placeholder="Ponto de Partida">
-            <input type="text" id="Destino" placeholder="Ponto de destino">
+            <input id="Partida" type="text" placeholder="Ponto de Partida"/>
+            <input id="Destino" type="text" placeholder="Ponto de destino"/>
             <button onclick="calcularRota()">Traçar Rota</button>
             <div id="mapa" style="height: 650px; width: 100%;"></div>
         </section>
@@ -82,7 +81,7 @@
 
     <!-- Chave da API e biblioteca de Places -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&libraries=places&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&callback=initMap"></script>
 </body>
 
 </html>
