@@ -18,6 +18,8 @@ function initMap() {
         zoom: 12,
         center: localizacaoInicial
     });
+   const bicyclingLayer = new google.maps.BicyclingLayer();
+   bicyclingLayer.setMap(map);
 
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
@@ -25,8 +27,13 @@ function initMap() {
 
     verificarLocalDeRisco(); // Verifica ao iniciar
     setInterval(verificarLocalDeRisco, 60000); // Verifica a cada minuto
-}
+    const trafficLayer = new google.maps.TrafficLayer();
 
+    trafficLayer.setMap(map);
+    const bikeLayer = new google.maps.BicyclingLayer();
+     bikeLayer.setMap(map);
+}
+window.initMap = initMap;
 function calcularRota() {
     const partida = document.getElementById('partida').value;
     const destino = document.getElementById('destino').value;
