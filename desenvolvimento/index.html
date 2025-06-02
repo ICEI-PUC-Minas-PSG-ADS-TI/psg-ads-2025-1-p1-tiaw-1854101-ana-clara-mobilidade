@@ -68,8 +68,8 @@
         </section>
 
         <section class="map-section">
-            <input id="Partida" type="text" placeholder="Ponto de Partida"/>
-            <input id="Destino" type="text" placeholder="Ponto de destino"/>
+             <input id="partida" type="text" placeholder="Ponto de Partidas2" onkeydown="initAutocomplete('partida')"/>
+            <input id="destino" type="text" placeholder="Ponto de destino" onkeydown="initAutocomplete('estino')"/>
             <button onclick="calcularRota()">Traçar Rota</button>
             <div id="mapa" style="height: 650px; width: 100%;"></div>
         </section>
@@ -83,7 +83,19 @@
 
     <!-- Chave da API e biblioteca de Places -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&libraries=places&callback=initMap"></script>
+    <script>
+  let autocomplete;
+  function initAutocomplete(campo){
+    autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById(campo),
+      {
+        fields: ['address_components', 'formatted_address', 'geometry']
+      }
+    );
+  }
+  google.maps.event.addDomListener(window, 'load', initAutocomplete);
+</script>
 
 
     <div class="social-buttons">
