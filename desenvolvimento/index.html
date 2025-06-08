@@ -1,144 +1,117 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Rote</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome CDN for icons -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Rote</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.png" alt="Logo da Security Rote.">
-            </a>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo da Security Rote.">
+      </a>
+    </div>
+    <h1>ROTA SEGURA</h1>
+    <nav>
+      <a href="index2.html">QUEM SOMOS?</a>
+
+      <button onclick="mostrarMensagem()"
+        style="background-color: #10144A; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">CONTATOS
+      </button>
+
+      <a href="index3.html">SERVIÇOS</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="sidebar">
+      <button onclick="mostrarFormulario()">Cadastrar Endereço
+      </button>
+      <button onclick="mostrarEnderecos()">Relatar Problemas
+        <a href="relatarproblema.html" title="Voltar">
+          <svg viewBox="0 0 24 1" aria-hidden="true" focusable="false">
+            <path d="" />
+          </svg>
+        </a>
+      </button>
+      <button onclick="verificarLocalizacao()">Verificar Localização Atual</button>
+      <button onclick="window.location.href='rotasanteriores.html'">Ver Rotas Anteriores</button>
+
+      </div>
+      <div id="alertas">
+        <h2>ALERTAS</h2 id="formEndereco">
+        <div id="alerta">
+          <h2>⚠️ Alerta de Risco!</h2>
+          <p>Você está em uma área considerada perigosa.</p>
         </div>
-        <h1>ROTA SEGURA</h1>
-        <nav>
-            <a href="index2.html">QUEM SOMOS?</a>
+        <div id="seguro">
+          <h2>✅ Local Seguro</h2>
+          <p>Você está em uma área segura.</p>
+        </div>
+        <audio id="somAlerta" src="audioalerta.mp3" preload="auto"></audio>
+        <div id="listaAlertas"></div>
+      </div>
 
-            <button onclick="mostrarMensagem()"
-                style="background-color: #10144A; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">CONTATOS
-            </button>
-
-            <a href="index3.html">SERVIÇOS</a>
-
-        </nav>
-    </header>
-
-    <main>
-        <section class="sidebar">
-            <button onclick="mostrarFormulario()">Cadastrar Endereço
-            </button>
-            <button onclick="mostrarEnderecos()">Relatar Problemas
-                 <a href="relatarproblema.html"  title="Voltar">
-  <svg viewBox="0 0 24 1" aria-hidden="true" focusable="false">
-    <path d=""/>
-  </svg>
-</a>
-            </button>
-            <button onclick="verificarLocalizacao()">Verificar Localização Atual</button>
-            <button onclick="window.location.href='rotasanteriores.html'">Ver Rotas Anteriores</button>     
-            
-            </div>
-            <div id="alertas">
-                <h2>ALERTAS</h2 id="formEndereco">
-                <h3>Novo Endereço</h3>
-                <label>Nome: <input type="text" id="nomeEndereco"></label><br><br>
-                <label>Latitude: <input type="number" id="latEndereco" step="any"></label><br><br>
-                <label>Longitude: <input type="number" id="lonEndereco" step="any"></label><br><br>
-                <label>Raio de risco (km): <input type="number" id="raioEndereco" step="0.1"></label><br><br>
-                <button onclick="cadastrarEndereco()">Salvar</button>
-            </div>
-            <div id="listaEnderecos" style="margin-top: 20px;"></div>
-            <div id="alerta">
-                <h3>⚠️ Alerta de Risco!</h3>
-                <p>Você está em uma área considerada perigosa.</p>
-            </div>
-            <div id="seguro">
-                <h3>✅ Local Seguro</h3>
-                <p>Você está em uma área segura.</p>
-            </div>
-            <audio id="somAlerta" src="audioalerta.mp3" preload="auto"></audio>
-            <div id="listaAlertas"></div>
-            </div>
+      </div>
 
 
-        </section>
+    </section>
 
-        <section class="map-section">
-             <input id="partida" type="text" placeholder="Ponto de Partidas2" onkeydown="initAutocomplete('partida')"/>
-            <input id="destino" type="text" placeholder="Ponto de destino" onkeydown="initAutocomplete('destino')"/>
-            <button onclick="calcularRota()">Traçar Rota</button>
-            <div id="mapa" style="height: 650px; width: 100%;"></div>
-        </section>
-    </main>
+    <section class="map-section">
+      <input id="partida" type="text" placeholder="Ponto de Partidas2" onkeydown="initAutocomplete('partida')" />
+      <input id="destino" type="text" placeholder="Ponto de destino" onkeydown="initAutocomplete('destino')" />
+      <button onclick="calcularRota()">Traçar Rota</button>
+      <div id="mapa" style="height: 650px; width: 100%;"></div>
+    </section>
+  </main>
 
-    <footer>
-        <p></p>
-    </footer>
+  <footer>
+    <p></p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
-    <!-- Chave da API e biblioteca de Places -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&libraries=places&callback=initMap"></script>
-    <script>
-  let autocomplete;
-  function initAutocomplete(campo){
-    autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById(campo),
-      {
-        fields: ['address_components', 'formatted_address', 'geometry']
-      }
-    );
-  }
-  google.maps.event.addDomListener(window, 'load', initAutocomplete);
-</script>
+  <!-- Chave da API e biblioteca de Places -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss4_n2fG-qnaKYJSV8IfKLJ1VzUZKbnM&libraries=places&callback=initMap"></script>
+  <script>
+    let autocomplete;
+    function initAutocomplete(campo) {
+      autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById(campo),
+        {
+          fields: ['address_components', 'formatted_address', 'geometry']
+        }
+      );
+    }
+    google.maps.event.addDomListener(window, 'load', initAutocomplete);
+  </script>
 
- <!-- começo livia e ana botões para compartilhar local-->
-   <div class="floating-container" aria-label="Redes sociais flutuantes">
-    <a
-      href="https://wa.me/5511999999999"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="floating-btn whatsapp"
-      aria-label="WhatsApp"
-      title="WhatsApp"
-    >
+  <!-- começo livia e ana botões para compartilhar local-->
+  <div class="floating-container" aria-label="Redes sociais flutuantes">
+    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="floating-btn whatsapp"
+      aria-label="WhatsApp" title="WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
-    
-    <a
-      href="https://www.instagram.com/seuperfil"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="floating-btn instagram"
-      aria-label="Instagram"
-      title="Instagram"
-    >
+
+    <a href="https://www.instagram.com/seuperfil" target="_blank" rel="noopener noreferrer"
+      class="floating-btn instagram" aria-label="Instagram" title="Instagram">
       <i class="fab fa-instagram"></i>
     </a>
-    <a
-      href="https://twitter.com/seuperfil"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="floating-btn twitter"
-      aria-label="Twitter"
-      title="Twitter"
-    >
+    <a href="https://twitter.com/seuperfil" target="_blank" rel="noopener noreferrer" class="floating-btn twitter"
+      aria-label="Twitter" title="Twitter">
       <i class="fab fa-twitter"></i>
     </a>
-    
-    
+
+
   </div>
-<!-- fim livia e ana botões para compartilhar local-->
+  <!-- fim livia e ana botões para compartilhar local-->
 
 </body>
 
