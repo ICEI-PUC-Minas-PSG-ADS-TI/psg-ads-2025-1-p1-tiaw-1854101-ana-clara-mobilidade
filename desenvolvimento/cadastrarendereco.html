@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastrar Endereço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+    
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #10144A;
+          color: white;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 15px;
+        }
+    
+        .back-arrow {
+          position: fixed;
+          top: 12px;
+          left: 12px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          background-color: #34568B;
+          color: white;
+          padding: 8px 12px;
+          border-radius: 6px;
+          font-weight: bold;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          user-select: none;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+        }
+    
+        .back-arrow:hover {
+          background-color: #274060;
+        }
+    
+        .back-arrow svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 8px;
+          fill: white;
+        }
+    
+        h1 {
+          margin-top: 20px;
+          margin-bottom: 30px;
+          font-weight: 700;
+          font-size: 2.8rem;
+          text-align: center;
+          color: white;
+          user-select: none;
+        }
+    
+        form {
+          background-color: #3198f8;
+          padding: 25px 20px;
+          border-radius: 12px;
+          max-width: 400px;
+          width: 100%;
+          box-shadow: 0 0 25px rgba(0,0,0,0.6);
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: 600;
+          font-size: 1rem;
+        }
+    
+        input[type="text"] {
+          width: 100%;
+          padding: 10px 12px;
+          margin-bottom: 20px;
+          border-radius: 8px;
+          border: none;
+          font-size: 1rem;
+          background-color: #edeff2;
+          color: #222;
+          transition: box-shadow 0.3s ease;
+        }
+    
+        input[type="text"]:focus {
+          outline: none;
+          box-shadow: 0 0 8px 2px #4a90e2;
+          background-color: #fff;
+        }
+    
+        button {
+          width: 100%;
+          padding: 12px;
+          background-color: #10144A;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          user-select: none;
+        }
+    
+        button:hover,
+        button:focus {
+          background-color: #2a5dab;
+        }
+    
+        @media (max-width: 420px) {
+          form {
+            padding: 20px 15px;
+            max-width: 100%;
+          }
+    
+          h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <a href="index.html" class="back-arrow" title="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+        Voltar
+      </a>
+    
+      <h1>CADASTRAR ENDEREÇO</h1>
+    
+      <form id="addressForm">
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" id="logradouro" name="logradouro" placeholder="Ex: Rua das Flores" required />
+    
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" placeholder="Ex: 123" required />
+    
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" placeholder="Ex: Centro" required />
+    
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" placeholder="Ex: Belo Horizonte" required />
+    
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" placeholder="Ex: MG" required />
+    
+        <button type="submit">Cadastrar Endereço</button>
+      </form>
+    
+      <script>
+        document.getElementById('addressForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+    
+          const endereco = {
+            logradouro: document.getElementById('logradouro').value.trim(),
+            numero: document.getElementById('numero').value.trim(),
+            bairro: document.getElementById('bairro').value.trim(),
+            cidade: document.getElementById('cidade').value.trim(),
+            estado: document.getElementById('estado').value.trim()
+          };
+    
+          // Recupera o array atual ou inicia um novo
+          let enderecos = JSON.parse(localStorage.getItem('enderecos')) || [];
+          enderecos.push(endereco);
+          localStorage.setItem('enderecos', JSON.stringify(enderecos));
+    
+          alert("Endereço cadastrado com sucesso!");
+          this.reset(); // limpa o formulário
+        });
+      </script>
+    </body>
+    </html>
