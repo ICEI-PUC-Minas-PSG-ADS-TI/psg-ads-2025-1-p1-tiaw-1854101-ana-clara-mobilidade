@@ -19,7 +19,7 @@ function initMap() {
         center: localizacaoInicial
     });
    const bicyclingLayer = new google.maps.BicyclingLayer();
-   bicyclingLayer.setMap(map);
+   bicyclingLayer.setMap(mapa);
 
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
@@ -29,9 +29,9 @@ function initMap() {
     setInterval(verificarLocalDeRisco, 60000); // Verifica a cada minuto
     const trafficLayer = new google.maps.TrafficLayer();
 
-    trafficLayer.setMap(map);
-    const bikeLayer = new google.maps.BicyclingLayer();
-     bikeLayer.setMap(map);
+    trafficLayer.setMap(mapa);
+     const bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(mapa);
 }
 window.initMap = initMap;
 function calcularRota() {
